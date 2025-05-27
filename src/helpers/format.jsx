@@ -77,3 +77,27 @@ export const transformStore = (store) => {
   }
   return store
 }
+
+// Convert text to camel case. E.g: White Blood Cells -> whiteBloodCells
+export const textToCamelCase = (text) => {
+  return text
+    .toLowerCase()
+    .split(' ')
+    .map((word, index) => {
+      if (index === 0) return word;
+      return word.charAt(0).toUpperCase() + word.slice(1);
+    })
+    .join('');
+}
+
+export const snakeCaseToTitleCase = (str) => {
+  return str
+    .split('_')
+    .map((word, index) => {
+      if (index === 0) {
+        return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+      }
+      return word.toLowerCase();
+    })
+    .join(' ');
+}

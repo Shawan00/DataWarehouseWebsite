@@ -1,6 +1,6 @@
 @layer components {
   .container-custom {
-    @apply container mx-auto px-4;
+    @apply w-full max-w-[1250px] mx-auto px-4;
   }
 
   /* pagination custom */
